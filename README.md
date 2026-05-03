@@ -1,106 +1,57 @@
-# Siwa Oasis Backend 🌴
+🌴 Siwa Oasis Backend
 
-## Project Structure
-```
-siwa-oasis-backend/
-├── .env
-├── package.json
-└── Src/
-    ├── index.js                        ← Entry point
-    ├── app.controller.js               ← Main router (bootstrap)
-    ├── DB/
-    │   ├── connection.js               ← Sequelize instance + connectDB()
-    │   └── Models/
-    │       ├── User.model.js
-    │       ├── ChatHistory.model.js
-    │       ├── Place.model.js
-    │       ├── MapLocation.model.js
-    │       ├── TripPlan.model.js
-    │       ├── PlanPlace.model.js      ← Junction (Many-to-Many)
-    │       ├── BusBooking.model.js
-    │       └── ContentUpdate.model.js
-    ├── Middlewares/
-    │   └── auth.middleware.js          ← protect + adminOnly
-    └── Modules/
-        ├── Auth/
-        │   ├── auth.controller.js      ← Routes: /auth/register, /auth/login
-        │   └── auth.services.js
-        ├── Users/
-        │   ├── user.controller.js      ← Routes: /users/me
-        │   └── user.services.js
-        ├── Places/
-        │   ├── places.controller.js    ← Routes: /places
-        │   └── places.services.js
-        ├── TripPlan/
-        │   ├── tripPlan.controller.js  ← Routes: /trip-plans
-        │   └── tripPlan.services.js
-        ├── BusBooking/
-        │   ├── busBooking.controller.js ← Routes: /bus-booking
-        │   └── busBooking.services.js
-        ├── Chatbot/
-        │   ├── chatbot.controller.js   ← Routes: /chatbot
-        │   └── chatbot.services.js
-        └── Admin/
-            ├── admin.controller.js     ← Routes: /admin
-            └── admin.services.js
-```
+A scalable backend system for tourism management, trip planning, and smart travel assistance.
 
-## Setup
-```bash
-npm install
-# Edit .env with your DB credentials
-npm run dev
-```
+📌 Overview
 
-## API Endpoints
+The Siwa Oasis Backend is a modern RESTful API built using Node.js, Express, and Sequelize, designed to power a tourism and travel platform focused on the Siwa Oasis experience.
 
-### Auth
-| Method | Route | Auth |
-|--------|-------|------|
-| POST | /auth/register | Public |
-| POST | /auth/login | Public |
+The system enables users to explore destinations, create personalized trip plans, book transportation, and interact with an intelligent chatbot for travel assistance. It also provides a complete admin panel for managing content, users, and system activity.
 
-### Users
-| Method | Route | Auth |
-|--------|-------|------|
-| GET | /users/me | User |
-| PUT | /users/me | User |
+Built with a modular architecture, the project ensures scalability, maintainability, and clean separation of concerns.
 
-### Places
-| Method | Route | Auth |
-|--------|-------|------|
-| GET | /places | Public |
-| GET | /places/:id | Public |
-| POST | /places | Admin |
-| PUT | /places/:id | Admin |
-| DELETE | /places/:id | Admin |
+🚀 Key Features
+🔐 Authentication & Authorization (User / Admin)
+🗺️ Places Management (Tourist spots & locations)
+🧳 Trip Planning System (Custom travel plans)
+🚌 Bus Booking Module (Booking, canceling, confirming)
+🤖 AI Chatbot Integration (Travel assistant + history tracking)
+📊 Admin Dashboard APIs (Users, logs, reports)
+🧩 Modular Architecture (Controller → Service → Model)
+🏗️ Architecture
 
-### Trip Plans
-| Method | Route | Auth |
-|--------|-------|------|
-| POST | /trip-plans | User |
-| GET | /trip-plans | User |
-| GET | /trip-plans/:id | User |
-| DELETE | /trip-plans/:id | User |
+The project follows a clean modular structure:
 
-### Bus Booking
-| Method | Route | Auth |
-|--------|-------|------|
-| POST | /bus-booking | User |
-| GET | /bus-booking/my | User |
-| PUT | /bus-booking/:id/cancel | User |
-| GET | /bus-booking/all | Admin |
-| PUT | /bus-booking/:id/confirm | Admin |
+Controllers → Handle routes & requests
+Services → Business logic
+Models → Database layer (Sequelize)
+Middlewares → Authentication & access control
+⚙️ Tech Stack
+Runtime: Node.js
+Framework: Express.js
+ORM: Sequelize
+Database: MySQL
+Architecture: RESTful API
+🎯 Use Cases
+Tourism & travel platforms
+Trip planning applications
+Smart travel assistants
+Booking & reservation systems
+🧠 Project Goal
 
-### Chatbot
-| Method | Route | Auth |
-|--------|-------|------|
-| POST | /chatbot/ask | User |
-| GET | /chatbot/history | User |
+To provide a complete backend solution for tourism platforms that combines trip management, booking systems, and intelligent user interaction in a single scalable architecture.
 
-### Admin
-| Method | Route | Auth |
-|--------|-------|------|
-| GET | /admin/users | Admin |
-| GET | /admin/logs | Admin |
-| GET | /admin/reports | Admin |
+🔮 Future Improvements
+🌐 Integration with maps & GPS services
+💳 Online payment integration
+⭐ Reviews & rating system
+📱 Mobile app integration
+📍 Real-time recommendations
+👨‍💻 Author
+
+Sayed Herzallah
+Backend Developer — Node.js | Express
+
+⭐ Support
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
